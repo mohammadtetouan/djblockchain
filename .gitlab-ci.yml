@@ -1,0 +1,3 @@
+test:
+  image: yourlabs/python
+  script: pip install -e .[test]; py.test -sv
