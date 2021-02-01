@@ -32,7 +32,7 @@ def bc():
 
 @pytest.fixture
 def acc(bc):
-    return User.objects.create().account_set.filter(blockchain=bc).first()
+    return User.objects.create().account_set.get_or_create(blockchain=bc)[0]
 
 
 @pytest.mark.django_db
